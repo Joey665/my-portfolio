@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Bright | Python Developer & Cybersecurity Specialist</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-main: #0a0e17;
+            --bg-card: #111827;
+            --bg-card-hover: #1f2937;
+            --border-color: #1f293d;
+            --accent-cyan: #00f2fe;
+            --accent-green: #10b981;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'Fira Code', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Typography */
+        .mono {
+            font-family: var(--font-mono);
+        }
+
+        .accent-text {
+            color: var(--accent-cyan);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 14, 23, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-prompt {
+            color: var(--accent-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Hero Section */
+        #hero {
+            padding: 160px 0 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-prompt {
+            color: var(--accent-green);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--text-muted) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-tagline {
+            font-family: var(--font-mono);
+            color: var(--accent-cyan);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-cyan);
+            color: var(--bg-main);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-muted);
+            background: var(--bg-card-hover);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        .section-number {
+            color: var(--accent-green);
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+        }
+
+        /* Terminal Window Card (About) */
+        .terminal-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: #161f30;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #10b981; }
+
+        .terminal-title {
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            margin-left: auto;
+        }
+
+        .terminal-body {
+            padding: 1.75rem;
+            font-size: 1.05rem;
+            color: var(--text-main);
+            line-height: 1.8;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-green);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .project-link {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-badge {
+            font-family: var(--font-mono);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .skill-badge:hover {
+            border-color: var(--accent-cyan);
+            background: var(--bg-card-hover);
+            color: var(--accent-cyan);
+            transform: translateY(-2px);
+        }
+
+        .skill-badge::before {
+            content: '>';
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2.5rem;
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-prompt">joseph@bright:~$</span> ./portfolio
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">01. About</a></li>
+                <li><a href="#projects">02. Projects</a></li>
+                <li><a href="#skills">03. Skills</a></li>
+                <li><a href="#contact">04. Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="hero">
+            <span class="mono hero-prompt">Hi, my name is</span>
+            <h1 class="hero-title">Joseph Bright.</h1>
+            <h2 class="hero-tagline">Python Developer • Cybersecurity Specialist</h2>
+            <p class="hero-description">
+                Building secure, resilient backend infrastructure, custom threat intelligence pipelines, and automated security solutions.
+            </p>
+            <div class="btn-group">
+                <a href="#projects" class="btn btn-primary">
+                    View Projects
+                </a>
+                <a href="https://github.com/Joey665" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    GitHub Profile ↗
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="section-header">
+                <span class="section-number">01.</span>
+                <h2>About Me</h2>
+            </div>
+            <div class="terminal-card">
+                <div class="terminal-header">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                    <span class="terminal-title">about.sh</span>
+                </div>
+                <div class="terminal-body">
+                    Results-driven Python developer with experience in backend systems, data pipelines, and AI-powered security tools. Active cybersecurity community leader passionate about bridging software engineering and threat detection automation to secure modern infrastructure.
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h2>Featured Projects</h2>
+            </div>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div>
+                        <h3 class="project-title">CyberHound v1.0</h3>
+                        <p class="project-desc">
+                            AI-powered intrusion detection system using Python, Scapy, and a RandomForestClassifier achieving ~99% accuracy on the CIC-IDS2017 dataset. Features a real-time Flask dashboard with traffic visualization and automated PDF threat export.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scapy</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">Flask</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/FIRSTGODOFCYBER/Cyber-Hound-v1.0" target="_blank" rel="noopener noreferrer" class="project-link">
+                        View Source Code ↗
+                    </a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div>
+                        <h3 class="project-title">Phishing Email Triage Automation</h3>
+                        <p class="project-desc">
+                            n8n-based security automation combining VirusTotal threat intelligence with custom-built content heuristics (typosquatting detection, suspicious TLD analysis, urgency-language scoring) to triage suspicious emails and trigger real-time Slack alerts. Rigorously tested against false positives using live business email samples.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag">n8n</span>
+                            <span class="tag">VirusTotal API</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Slack API</span>
+                        </div>
+                    </div>
+                    <!-- Replace href value with your actual GitHub repo link when ready -->
+                    <a href="https://github.com/Joey665" target="_blank" rel="noopener noreferrer" class="project-link">
+                        View Repository ↗
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="section-header">
+                <span class="section-number">03.</span>
+                <h2>Technical Arsenal</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-badge">Python</div>
+                <div class="skill-badge">Flask</div>
+                <div class="skill-badge">Scikit-learn</div>
+                <div class="skill-badge">Scapy</div>
+                <div class="skill-badge">Redis</div>
+                <div class="skill-badge">Celery</div>
+                <div class="skill-badge">Elasticsearch / ELK Stack</div>
+                <div class="skill-badge">n8n Workflow Automation</div>
+                <div class="skill-badge">VirusTotal API</div>
+                <div class="skill-badge">SQLite</div>
+                <div class="skill-badge">Git / GitHub</div>
+                <div class="skill-badge">Linux</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="section-header">
+                <span class="section-number">04.</span>
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-card">
+                <p>
+                    Whether you want to collaborate on open-source security tools, discuss backend infrastructure, or explore employment opportunities—my inbox is always open.
+                </p>
+                <div class="contact-links">
+                    <a href="https://github.com/Joey665" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        GitHub Profile
+                    </a>
+                    <!-- Update with your personal email -->
+                    <a href="mailto:josep342h@gmail.com" class="btn btn-secondary">
+                        Email Me
+                    </a>
+                    <!-- Update with your LinkedIn profile link -->
+                    <a href="https://www.linkedin.com/in/joseph-bright-039079226/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© Joseph Bright. Designed & Built for Security & Performance.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
