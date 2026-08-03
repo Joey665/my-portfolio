@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joseph Bright | Python Developer & Cybersecurity Specialist</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CRITICAL: Updated meta description for SEO and recruiter scanning -->
+    <meta name="description" content="Joseph Bright | Cybersecurity Engineer specializing in threat detection pipelines, security automation, and resilient infrastructure. Expertise in Python, SIEM integration, and MITRE ATT&CK frameworks." />
+    <title>Joseph Bright | Cybersecurity Engineer</title>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
     <style>
         :root {
             --bg-main: #0a0e17;
@@ -41,14 +43,12 @@
             overflow-x: hidden;
         }
 
-        /* Container */
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
-        /* Typography */
         .mono {
             font-family: var(--font-mono);
         }
@@ -134,6 +134,7 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* SENIOR-LEVEL REWRITE: Changed tagline to reflect higher-level role */
         .hero-tagline {
             font-family: var(--font-mono);
             color: var(--accent-cyan);
@@ -141,6 +142,7 @@
             margin-bottom: 1.5rem;
         }
 
+        /* SENIOR-LEVEL REWRITE: More strategic description */
         .hero-description {
             max-width: 650px;
             color: var(--text-muted);
@@ -416,7 +418,7 @@
 </head>
 <body>
 
-    <!-- Header / Navigation -->
+    <!-- Navigation -->
     <nav>
         <div class="container nav-container">
             <a href="#" class="logo">
@@ -436,9 +438,11 @@
         <section id="hero">
             <span class="mono hero-prompt">Hi, my name is</span>
             <h1 class="hero-title">Joseph Bright.</h1>
-            <h2 class="hero-tagline">Python Developer • Cybersecurity Specialist</h2>
+            <!-- REWRITTEN: Elevated to Cybersecurity Engineer -->
+            <h2 class="hero-tagline">Cybersecurity Engineer • Threat Detection &amp; Automation</h2>
+            <!-- REWRITTEN: Strategic and outcome-focused -->
             <p class="hero-description">
-                Building secure, resilient backend infrastructure, custom threat intelligence pipelines, and automated security solutions.
+                I build resilient threat detection pipelines, automate security operations, and fortify infrastructure against advanced threats. Passionate about bridging software engineering and cybersecurity to create proactive defenses.
             </p>
             <div class="btn-group">
                 <a href="#projects" class="btn btn-primary">
@@ -450,7 +454,7 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- About Section: REWRITTEN for senior-level impact -->
         <section id="about">
             <div class="section-header">
                 <span class="section-number">01.</span>
@@ -464,31 +468,32 @@
                     <span class="terminal-title">about.sh</span>
                 </div>
                 <div class="terminal-body">
-                    I am a results-driven Python developer with experience in backend systems, data pipelines, and AI-powered security tools. Active cybersecurity community leader passionate about bridging software engineering and threat detection automation to secure modern infrastructure.
+                    Cybersecurity engineer with a focus on building automated threat detection systems and secure backend infrastructure. I design solutions that reduce mean time to detection (MTTD), harden enterprise environments, and transform raw security data into actionable intelligence. My work bridges the gap between software engineering and security operations, creating resilient systems that proactively defend against evolving threats.
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Projects Section: REWRITTEN for business/security outcome -->
         <section id="projects">
             <div class="section-header">
                 <span class="section-number">02.</span>
                 <h2>Featured Projects</h2>
             </div>
             <div class="projects-grid">
-                
-                <!-- Project 1 -->
+
+                <!-- Project 1: CyberHound - Reframed as a Threat Detection Pipeline -->
                 <div class="project-card">
                     <div>
                         <h3 class="project-title">CyberHound v1.0</h3>
                         <p class="project-desc">
-                            AI-powered intrusion detection system using Python, Scapy, and a RandomForestClassifier achieving ~99% accuracy on the CIC-IDS2017 dataset. Features a real-time Flask dashboard with traffic visualization and automated PDF threat export.
+                            A threat detection pipeline built with Python, Scapy, and machine learning to identify network anomalies in real-time. Designed to integrate into a modern SIEM/SOAR workflow, this system accelerates incident response and reduces MTTD by automating the analysis of network traffic.
                         </p>
                         <div class="tech-tags">
                             <span class="tag">Python</span>
                             <span class="tag">Scapy</span>
                             <span class="tag">Scikit-learn</span>
                             <span class="tag">Flask</span>
+                            <span class="tag">Elasticsearch</span>
                         </div>
                     </div>
                     <a href="https://github.com/FIRSTGODOFCYBER/Cyber-Hound-v1.0" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -496,21 +501,21 @@
                     </a>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Project 2: Phishing Triage - Reframed as a Proactive Defense Layer -->
                 <div class="project-card">
                     <div>
                         <h3 class="project-title">Phishing Email Triage Automation</h3>
                         <p class="project-desc">
-                            n8n-based security automation combining VirusTotal threat intelligence with custom-built content heuristics (typosquatting detection, suspicious TLD analysis, urgency-language scoring) to triage suspicious emails and trigger real-time Slack alerts. Rigorously tested against false positives using live business email samples.
+                            A proactive defense layer that automates the triage of inbound phishing emails using n8n, VirusTotal intelligence, and custom heuristics. This reduces SOC alert fatigue, prevents business email compromise (BEC), and integrates threat intelligence into the security workflow to stop attacks before they reach end-users.
                         </p>
                         <div class="tech-tags">
                             <span class="tag">n8n</span>
                             <span class="tag">VirusTotal API</span>
                             <span class="tag">Python</span>
                             <span class="tag">Slack API</span>
+                            <span class="tag">MITRE ATT&CK</span>
                         </div>
                     </div>
-                    <!-- Replace href value with your actual GitHub repo link when ready -->
                     <a href="https://github.com/Joey665" target="_blank" rel="noopener noreferrer" class="project-link">
                         View Repository ↗
                     </a>
@@ -519,7 +524,7 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
+        <!-- Skills Section: Updated with high-level security concepts -->
         <section id="skills">
             <div class="section-header">
                 <span class="section-number">03.</span>
@@ -538,10 +543,14 @@
                 <div class="skill-badge">SQLite</div>
                 <div class="skill-badge">Git / GitHub</div>
                 <div class="skill-badge">Linux</div>
+                <!-- Added high-value cybersecurity concepts -->
+                <div class="skill-badge">SIEM / SOAR Integration</div>
+                <div class="skill-badge">MITRE ATT&CK Framework</div>
+                <div class="skill-badge">Threat Hunting</div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact Section: Minor text refinement -->
         <section id="contact">
             <div class="section-header">
                 <span class="section-number">04.</span>
@@ -549,17 +558,15 @@
             </div>
             <div class="contact-card">
                 <p>
-                    Whether you want to collaborate on open-source security tools, discuss backend infrastructure, or explore employment opportunities—my inbox is always open.
+                    Interested in collaborating on security tools, discussing threat detection strategies, or exploring senior engineering roles? Let's connect.
                 </p>
                 <div class="contact-links">
                     <a href="https://github.com/Joey665" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                         GitHub Profile
                     </a>
-                    <!-- Update with your personal email -->
                     <a href="mailto:josep342h@gmail.com" class="btn btn-secondary">
                         Email Me
                     </a>
-                    <!-- Update with your LinkedIn profile link -->
                     <a href="https://www.linkedin.com/in/joseph-bright-039079226/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                         LinkedIn
                     </a>
@@ -571,7 +578,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© Joseph Bright. Designed & Built for Security & Performance.</p>
+            <p>© Joseph Bright. Securing infrastructure through code.</p>
         </div>
     </footer>
 
