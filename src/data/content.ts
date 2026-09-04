@@ -35,8 +35,8 @@ export interface Identity {
 
 export const identity: Identity = {
   name: "Joseph Bright",
-  role: "AI & Security Automation Engineer",
-  sub: "I build threat-detection pipelines, supply-chain security tooling, and cloud automation that turns raw data into actionable intelligence.",
+  role: "DevOps & AI Automation Engineer",
+  sub: "I build intelligent, scalable systems that bridge DevOps, Cloud infrastructure, and AI/ML solutions with a secure foresight",
   location: "Lagos, Nigeria • Open to remote (global)",
   github: "https://github.com/Joey665",
   medium: "https://medium.com/@josephbright342",
