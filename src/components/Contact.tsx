@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Link, Mail, NotebookPen } from "lucide-react";
+import { FileText, Link, Mail, NotebookPen } from "lucide-react";
 import type { Identity } from "../data/content";
 
 interface ContactProps {
@@ -58,6 +58,14 @@ export function Contact({ identity }: ContactProps) {
             className="inline-flex items-center gap-2 rounded-md border border-slate-400/20 bg-slate-900/80 px-3.5 py-2 text-sm text-slate-200 transition-colors duration-200 hover:border-emerald-300/50 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80"
           >
             <NotebookPen className="size-4" /> Medium
+          </a>
+          <a
+            href={identity.resumeUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-md border border-slate-400/20 bg-slate-900/80 px-3.5 py-2 text-sm text-slate-200 transition-colors duration-200 hover:border-emerald-300/50 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80"
+          >
+            <FileText className="size-4" /> Resume
           </a>
         </div>
       </div>

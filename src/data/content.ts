@@ -30,6 +30,7 @@ export interface Identity {
   medium: string;
   linkedin: string;
   email: string;
+  resumeUrl: string;
 }
 
 export const identity: Identity = {
@@ -41,6 +42,8 @@ export const identity: Identity = {
   medium: "https://medium.com/@josephbright342",
   linkedin: "https://www.linkedin.com/in/joseph-bright-039079226",
   email: "josephbright342@gmail.com",
+  // Drop your resume PDF at public/resume.pdf (filename must match exactly) and this will work.
+  resumeUrl: "/resume.pdf",
 };
 
 export const stats: Stat[] = [
@@ -133,38 +136,35 @@ export const skillGroups: SkillGroup[] = [
   },
 ];
 
-// TODO: Replace profile URL with exact per-article URLs when available.
-const mediumProfile = "https://medium.com/@josephbright342";
-
 export const articles: Article[] = [
   {
     title: "I Built an npm Supply Chain Detection Lab and the Reality is Uncomfortable",
     tag: "Supply Chain",
-    url: mediumProfile,
+    url: "https://medium.com/@josephbright342/i-built-an-npm-supply-chain-detection-lab-and-the-reality-is-uncomfortable-97094edc2840",
   },
   {
     title: "North Korea Poisoned npm. Then Someone Published the Playbook.",
     tag: "Threat Intel",
-    url: mediumProfile,
+    url: "https://medium.com/@josephbright342/north-korea-poisoned-npm-then-someone-published-the-playbook-551f0ebfd3b4",
   },
   {
     title: "Inside the Nx Console Supply Chain Attack",
     tag: "Malware Analysis",
-    url: mediumProfile,
+    url: "https://medium.com/@josephbright342/poisoned-code-how-a-malicious-vs-code-extension-breached-githubs-internal-repositories-and-why-8811ef6fed03",
   },
   {
     title: "I Interviewed the Alleged Hacker Behind the EFCC Breach",
     tag: "OSINT Report",
-    url: mediumProfile,
+    url: "https://medium.com/@josephbright342/i-interviewed-the-alleged-hacker-behind-the-efcc-breach-heres-what-nigeria-must-learn-now-0999d424f2f4",
   },
   {
     title: "How Supply Chain Attacks Became Cybersecurity's Biggest Threat",
     tag: "Research",
-    url: mediumProfile,
+    url: "https://medium.com/@josephbright342/inside-the-supply-chain-attack-epidemic-from-trusting-trust-to-the-nx-console-github-breach-3c27d31dfe13",
   },
   {
     title: "Resilience Beyond the Crash: Business Continuity & Disaster Recovery",
     tag: "BCDR",
-    url: mediumProfile,
+    url: "https://medium.com/@josephbright342/resilience-beyond-the-crash-a-guide-to-business-continuity-disaster-recovery-5e15ed5a14d7",
   },
 ];

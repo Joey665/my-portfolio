@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Link, Mail, MapPin, NotebookPen } from "lucide-react";
+import { FileText, Link, Mail, MapPin, NotebookPen } from "lucide-react";
 import type { Identity } from "../data/content";
 
 interface HeroProps {
@@ -45,6 +45,15 @@ export function Hero({ identity }: HeroProps) {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href={identity.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Download Resume"
+              className="inline-flex items-center gap-2 rounded-md border border-emerald-300/40 bg-emerald-300/10 px-3.5 py-2 text-sm font-medium text-emerald-200 transition-colors duration-200 hover:bg-emerald-300/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80"
+            >
+              <FileText className="size-4" /> Resume
+            </a>
             <a
               href={identity.github}
               target="_blank"
