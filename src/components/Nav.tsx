@@ -33,7 +33,7 @@ export function Nav() {
           className="group inline-flex items-center gap-2 rounded-md text-sm font-medium text-slate-100 outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80"
         >
           <Shield className="size-4 text-emerald-400 transition-transform duration-300 group-hover:rotate-12" />
-          <span className="font-mono tracking-wider text-slate-200">JB//SOC</span>
+          <span className="font-mono tracking-wider text-slate-200">Joseph Bright's Portfolio</span>
         </a>
 
         <button
