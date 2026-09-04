@@ -1,0 +1,119 @@
+diff --git a/src/components/Contact.tsx b/src/components/Contact.tsx
+index 15558da..9e1f837 100644
+--- a/src/components/Contact.tsx
++++ b/src/components/Contact.tsx
+@@ -1,5 +1,5 @@
+ import { motion, useReducedMotion } from "framer-motion";
+-import { Link, Mail, NotebookPen } from "lucide-react";
++import { FileText, Link, Mail, NotebookPen } from "lucide-react";
+ import type { Identity } from "../data/content";
+ 
+ interface ContactProps {
+@@ -59,6 +59,14 @@ export function Contact({ identity }: ContactProps) {
+           >
+             <NotebookPen className="size-4" /> Medium
+           </a>
++          <a
++            href={identity.resumeUrl}
++            target="_blank"
++            rel="noreferrer"
++            className="inline-flex items-center gap-2 rounded-md border border-slate-400/20 bg-slate-900/80 px-3.5 py-2 text-sm text-slate-200 transition-colors duration-200 hover:border-emerald-300/50 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80"
++          >
++            <FileText className="size-4" /> Resume
++          </a>
+         </div>
+       </div>
+     </motion.section>
+diff --git a/src/components/Hero.tsx b/src/components/Hero.tsx
+index 3c01e92..e6e10aa 100644
+--- a/src/components/Hero.tsx
++++ b/src/components/Hero.tsx
+@@ -1,5 +1,5 @@
+ import { motion, useReducedMotion } from "framer-motion";
+-import { Link, Mail, MapPin, NotebookPen } from "lucide-react";
++import { FileText, Link, Mail, MapPin, NotebookPen } from "lucide-react";
+ import type { Identity } from "../data/content";
+ 
+ interface HeroProps {
+@@ -45,6 +45,15 @@ export function Hero({ identity }: HeroProps) {
+           </p>
+ 
+           <div className="mt-8 flex flex-wrap items-center gap-3">
++            <a
++              href={identity.resumeUrl}
++              target="_blank"
++              rel="noreferrer"
++              aria-label="Download Resume"
++              className="inline-flex items-center gap-2 rounded-md border border-emerald-300/40 bg-emerald-300/10 px-3.5 py-2 text-sm font-medium text-emerald-200 transition-colors duration-200 hover:bg-emerald-300/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80"
++            >
++              <FileText className="size-4" /> Resume
++            </a>
+             <a
+               href={identity.github}
+               target="_blank"
+diff --git a/src/data/content.ts b/src/data/content.ts
+index 807bd28..494c1b2 100644
+--- a/src/data/content.ts
++++ b/src/data/content.ts
+@@ -30,6 +30,7 @@ export interface Identity {
+   medium: string;
+   linkedin: string;
+   email: string;
++  resumeUrl: string;
+ }
+ 
+ export const identity: Identity = {
+@@ -41,6 +42,8 @@ export const identity: Identity = {
+   medium: "https://medium.com/@josephbright342",
+   linkedin: "https://www.linkedin.com/in/joseph-bright-039079226",
+   email: "josephbright342@gmail.com",
++  // Drop your resume PDF at public/resume.pdf (filename must match exactly) and this will work.
++  resumeUrl: "/resume.pdf",
+ };
+ 
+ export const stats: Stat[] = [
+@@ -133,38 +136,35 @@ export const skillGroups: SkillGroup[] = [
+   },
+ ];
+ 
+-// TODO: Replace profile URL with exact per-article URLs when available.
+-const mediumProfile = "https://medium.com/@josephbright342";
+-
+ export const articles: Article[] = [
+   {
+     title: "I Built an npm Supply Chain Detection Lab and the Reality is Uncomfortable",
+     tag: "Supply Chain",
+-    url: mediumProfile,
++    url: "https://medium.com/@josephbright342/i-built-an-npm-supply-chain-detection-lab-and-the-reality-is-uncomfortable-97094edc2840",
+   },
+   {
+     title: "North Korea Poisoned npm. Then Someone Published the Playbook.",
+     tag: "Threat Intel",
+-    url: mediumProfile,
++    url: "https://medium.com/@josephbright342/north-korea-poisoned-npm-then-someone-published-the-playbook-551f0ebfd3b4",
+   },
+   {
+     title: "Inside the Nx Console Supply Chain Attack",
+     tag: "Malware Analysis",
+-    url: mediumProfile,
++    url: "https://medium.com/@josephbright342/poisoned-code-how-a-malicious-vs-code-extension-breached-githubs-internal-repositories-and-why-8811ef6fed03",
+   },
+   {
+     title: "I Interviewed the Alleged Hacker Behind the EFCC Breach",
+     tag: "OSINT Report",
+-    url: mediumProfile,
++    url: "https://medium.com/@josephbright342/i-interviewed-the-alleged-hacker-behind-the-efcc-breach-heres-what-nigeria-must-learn-now-0999d424f2f4",
+   },
+   {
+     title: "How Supply Chain Attacks Became Cybersecurity's Biggest Threat",
+     tag: "Research",
+-    url: mediumProfile,
++    url: "https://medium.com/@josephbright342/inside-the-supply-chain-attack-epidemic-from-trusting-trust-to-the-nx-console-github-breach-3c27d31dfe13",
+   },
+   {
+     title: "Resilience Beyond the Crash: Business Continuity & Disaster Recovery",
+     tag: "BCDR",
+-    url: mediumProfile,
++    url: "https://medium.com/@josephbright342/resilience-beyond-the-crash-a-guide-to-business-continuity-disaster-recovery-5e15ed5a14d7",
+   },
+ ];
